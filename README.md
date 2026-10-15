@@ -2,9 +2,9 @@
 
 ![Thobic Banner](./Image/ThobicBanner.png)
 
-Thobic is a web-based platform designed to simplify and automate the process of ordering and tailoring Thawb (traditional Arabic men's clothing).
+A REST API for a platform that simplifies ordering and tailoring Thawb by connecting clients, tailoring shops, and material providers.
 
-The platform connects clients, tailoring shops, and external material providers through a centralized digital system, making it easier to manage orders, measurements, materials, and order statuses.
+[Live Website](https://thobic.vercel.app) · [Frontend Repository](https://github.com/AhKhamis/Thobic-Frontend) · [Backend Repository](https://github.com/AhKhamis/Thobic-Backend) · [API Documentation](https://thobic-backend.onrender.com/docs)
 
 ---
 
@@ -24,6 +24,7 @@ The platform connects clients, tailoring shops, and external material providers 
 - [Getting Started](#getting-started)
 - [Environment Variables](#environment-variables)
 - [API Documentation](#api-documentation)
+- [API Route Reference](#api-route-reference)
 - [User Roles](#user-roles)
 - [Future Development](#future-development)
 - [Team](#team)
@@ -32,26 +33,11 @@ The platform connects clients, tailoring shops, and external material providers 
 
 ## Overview
 
-Thobic aims to reduce the need for clients to visit tailoring shops in person to manage measurements, choose materials, discuss prices, and arrange order delivery.
-
-The platform also supports communication between tailoring shops and external material providers when the required materials are unavailable in the tailor's inventory.
-
-The backend provides the API and server-side functionality required to support the platform, including authentication, database operations, user management, orders, measurements, and materials.
+Thobic aims to reduce the need for clients to visit tailoring shops in person to manage measurements, choose materials, discuss prices, and arrange delivery. The backend provides server-side functionality for authentication, profiles, measurements, materials, shops, and order workflows.
 
 ## Core Idea
 
-The website automates the process of ordering and tailoring Thawb by connecting clients with tailoring shops and external material providers.
-
-The platform aims to:
-
-- Simplify the creation and management of Thawb orders.
-- Allow clients to select materials from a tailor's available inventory.
-- Support requests for materials from external providers.
-- Store and reuse client measurements for future orders.
-- Reduce unnecessary physical visits to tailoring shops.
-- Help tailors manage orders, materials, pricing, and deadlines.
-- Allow material providers to manage their inventory and incoming material orders.
-- Organize the order lifecycle through status updates.
+The platform connects clients, tailoring shops, and external material providers through a centralized digital system. It aims to simplify Thawb orders, store measurements for reuse, support material requests from external providers, and help tailors and providers manage inventory and order statuses.
 
 ---
 
@@ -59,7 +45,8 @@ The platform aims to:
 
 - **Live Website:** [Thobic](https://thobic.vercel.app)
 - **Backend API:** [Thobic Backend](https://thobic-backend.onrender.com)
-- **Interactive API Documentation:** [Swagger UI](https://thobic-backend.onrender.com/docs)
+- **Swagger UI:** [Interactive API Documentation](https://thobic-backend.onrender.com/docs)
+- **ReDoc:** [Alternative API Documentation](https://thobic-backend.onrender.com/redoc)
 
 ## Repositories
 
@@ -70,63 +57,43 @@ The platform aims to:
 
 ## Features and User Stories
 
-The following user stories describe the platform's intended functionality. Individual features may depend on their implementation status.
+The following user stories describe intended functionality. Availability depends on the current implementation.
 
 ### Client
 
-- As a client, I want to sign up, sign in, and sign out securely.
-- As a client, I want to create an order and assign it to a specific tailor or tailoring shop branch.
-- As a client, I want to select a material for my order.
-- As a client, I want to request material from an external provider if I cannot find a suitable option in the tailor's inventory.
-- As a client, I want to browse and filter available materials.
-- As a client, I want to add and save my measurements for future orders.
-- As a client, I want to update my saved measurements.
-- As a client, I want to delete my measurements.
-- As a client, I want to book an appointment for measurements at a physical location.
-- As a client, I want to update order details before the tailor accepts the order.
-- As a client, I want to cancel an order before it is accepted by the tailor.
-- As a client, I want to approve or reject the proposed price and delivery deadline.
-- As a client, I want to confirm that my order has been delivered.
-- As a client, I want to browse tailoring shops and view their profiles.
-- As a client, I want to filter tailoring shops to find a suitable option.
+- Register, sign in, and sign out securely.
+- Create a Thawb order and select a tailor or shop branch.
+- Select available materials or request material from an external provider.
+- Browse and filter materials.
+- Add, update, and delete saved measurements.
+- Edit or cancel an order where permitted.
+- Approve or reject proposed prices and delivery deadlines.
+- Confirm delivery and browse tailoring shops.
 
 ### Admin
 
-- As an admin, I want to sign in and sign out securely.
-- As an admin, I want to create tailor accounts.
-- As an admin, I want to create provider accounts.
+- Sign in and sign out securely.
+- Create tailor and provider accounts.
 
 ### Tailor
 
-- As a tailor, I want to sign in and sign out securely.
-- As a tailor, I want to view all orders assigned to me and their statuses.
-- As a tailor, I want to view material orders that have been delivered or are awaiting delivery.
-- As a tailor, I want to accept or reject incoming orders.
-- As a tailor, I want to propose a price and delivery deadline for an order.
-- As a tailor, I want to update my availability status to open, closed, or busy.
-- As a tailor, I want to update order statuses throughout the tailoring process.
-- As a tailor, I want to view a summary of my assigned orders.
-- As a tailor, I want to add materials available in my inventory.
-- As a tailor, I want to mark materials as available or unavailable.
-- As a tailor, I want to mark a material order as delivered.
+- View assigned orders and their statuses.
+- Accept or reject incoming orders and propose a price and deadline.
+- Update order statuses and shop availability.
+- Manage inventory and material availability.
+- View material orders and confirm material delivery.
 
 ### Provider
 
-- As a provider, I want to sign in and sign out securely.
-- As a provider, I want to add materials to my inventory.
-- As a provider, I want to view material orders sent to me.
-- As a provider, I want to accept or reject incoming material orders.
-- As a provider, I want to update an order's status from pending to accepted.
-- As a provider, I want to update an order's status from accepted to on the way.
-- As a provider, I want to update the information of materials in my inventory.
-- As a provider, I want to mark materials as deleted when they are no longer offered.
-- As a provider, I want to mark specific materials as unavailable.
+- Manage material inventory.
+- View incoming material orders.
+- Accept or reject material orders and update their statuses.
 
 ---
 
 ## Entity Relationship Diagram
 
-The following ERD illustrates the main entities and their relationships within the Thobic platform.
+The ERD illustrates the main entities and relationships used by the platform.
 
 ![Thobic Entity Relationship Diagram](./Image/erd.png)
 
@@ -134,7 +101,7 @@ The following ERD illustrates the main entities and their relationships within t
 
 ## Wireframes
 
-The following wireframes illustrate the planned user interfaces and workflows for clients, tailors, providers, and administrators.
+The wireframes illustrate planned interfaces for clients, tailors, providers, and administrators.
 
 ![Thobic Wireframes](./Image/ThobicW.png)
 
@@ -142,49 +109,39 @@ The following wireframes illustrate the planned user interfaces and workflows fo
 
 ## Frontend Architecture
 
-The frontend provides the user interface through which clients, tailors, providers, and administrators interact with the platform.
-
-### Components Hierarchy
+The frontend is built with React and communicates with this API for authentication and application data.
 
 ![Thobic Components Hierarchy](./Image/c1.png)
 
-### Frontend Component Structure
-
 ![Thobic Frontend Architecture](./Image/co2.png)
 
-For implementation details, visit the [Thobic Frontend Repository](https://github.com/AhKhamis/Thobic-Frontend).
+See the [Thobic Frontend Repository](https://github.com/AhKhamis/Thobic-Frontend) for frontend implementation details.
 
 ---
 
 ## Backend Architecture
 
-The backend is responsible for server-side business logic, API endpoints, authentication, authorization, and database operations.
+The backend uses FastAPI and SQLAlchemy, with PostgreSQL for persistence.
 
 ### Main Responsibilities
 
-- User registration and authentication.
-- Token-based authentication and access control.
+- User registration, authentication, and access control.
 - User and profile management.
 - Client measurement management.
 - Thawb order management.
-- Tailoring shop and tailor management.
-- Material inventory management.
-- Material order management.
+- Shop and tailor management.
+- Material inventory and material-order management.
 - Order status management.
-- Database connectivity and persistence.
-- Configuration and database migrations.
-
-The backend is built with FastAPI and SQLAlchemy, with PostgreSQL used for data persistence.
+- Database migrations and persistence.
 
 ---
 
 ## Project Structure
 
-The following is a simplified overview of the backend's main files and directories.
+Simplified overview; actual files may vary as the project evolves.
 
 ```text
 Thobic-Backend/
-│
 ├── config/
 ├── controllers/
 ├── migrations/
@@ -199,60 +156,42 @@ Thobic-Backend/
 └── README.md
 ```
 
-_Note: This is a simplified overview. The exact files and subdirectories may vary as the project evolves._
-
 ---
 
 ## Technologies Used
 
 ### Backend
 
-- **Python** — Primary backend programming language.
-- **FastAPI** — Building REST API endpoints.
-- **Uvicorn** — Running the ASGI application server.
-- **SQLAlchemy** — Database ORM and database operations.
-- **Alembic** — Database schema migrations.
+- **Python** — Backend programming language.
+- **FastAPI** — REST API framework.
+- **Uvicorn** — ASGI server.
+- **SQLAlchemy** — ORM and database operations.
+- **Alembic** — Database migrations.
 - **Pydantic** — Data validation and serialization.
-- **PyJWT** — JSON Web Token handling.
+- **PyJWT** — Token handling.
 - **Passlib and bcrypt** — Password hashing.
 - **python-dotenv** — Environment variable management.
-- **python-multipart** — Handling multipart form data.
-- **Pipenv** — Python dependency and virtual environment management.
+- **Pipenv** — Dependency and virtual environment management.
 
 ### Database
 
 - **PostgreSQL** — Relational database.
-- **psycopg2-binary** — PostgreSQL database driver.
-
-### Frontend
-
-- **React**
-- **Vite**
-- **React Router**
-- **Axios**
-- **JavaScript**
-- **CSS**
-
-For the complete frontend implementation, see the [frontend repository](https://github.com/AhKhamis/Thobic-Frontend).
+- **psycopg2-binary** — PostgreSQL driver.
 
 ### Development and Deployment
 
-- **Git and GitHub** — Version control and collaboration.
+- **Git and GitHub** — Version control.
 - **Render** — Backend deployment.
 - **Vercel** — Frontend deployment.
-- **Swagger UI** — Interactive API documentation.
+- **Swagger UI and ReDoc** — API documentation.
 
 ---
 
 ## Getting Started
 
-Follow these steps to run the backend locally.
-
 ### Prerequisites
 
-Make sure the following tools are installed:
-
-- Python compatible with the project's Pipfile.
+- Python version compatible with the project's Pipfile.
 - Pipenv.
 - PostgreSQL.
 - Git.
@@ -272,9 +211,7 @@ pipenv install
 
 ### 3. Configure Environment Variables
 
-Create a `.env` file in the project root and configure the required variables.
-
-See the [Environment Variables](#environment-variables) section below.
+Create a `.env` file in the project root using the variables listed below.
 
 ### 4. Apply Database Migrations
 
@@ -282,17 +219,15 @@ See the [Environment Variables](#environment-variables) section below.
 pipenv run alembic upgrade head
 ```
 
-Ensure your database connection is configured correctly before running migrations.
-
 ### 5. Start the Development Server
 
 ```bash
 pipenv run uvicorn main:app --reload
 ```
 
-The local API should now be available at:
+Local URLs:
 
-- **API Base URL:** `http://127.0.0.1:8000`
+- **API:** `http://127.0.0.1:8000`
 - **Swagger UI:** `http://127.0.0.1:8000/docs`
 - **ReDoc:** `http://127.0.0.1:8000/redoc`
 
@@ -300,17 +235,13 @@ The local API should now be available at:
 
 ## Environment Variables
 
-The backend uses environment variables to configure its database connection, authentication, and allowed frontend origins.
+| Variable       | Purpose                                                |
+| -------------- | ------------------------------------------------------ |
+| `DATABASE_URL` | PostgreSQL connection string.                          |
+| `JWT_SECRET`   | Secret used to sign or validate authentication tokens. |
+| `CORS_ORIGINS` | Comma-separated list of permitted frontend origins.    |
 
-Configure the variables required by your local setup in a `.env` file.
-
-| Variable       | Purpose                                                               |
-| -------------- | --------------------------------------------------------------------- |
-| `DATABASE_URL` | PostgreSQL database connection string.                                |
-| `JWT_SECRET`   | Secret used for signing or validating authentication tokens.          |
-| `CORS_ORIGINS` | Comma-separated list of frontend origins permitted to access the API. |
-
-Example format:
+Example:
 
 ```env
 DATABASE_URL=your_postgresql_connection_string
@@ -318,51 +249,122 @@ JWT_SECRET=your_secret_key
 CORS_ORIGINS=http://localhost:5173,https://thobic.vercel.app
 ```
 
-**Security note:** Never commit real database credentials, JWT secrets, or other sensitive environment values to GitHub. Keep `.env` excluded from version control.
+**Security:** Never commit real credentials, JWT secrets, or other sensitive values to GitHub. Keep `.env` excluded from version control.
 
 ---
 
 ## API Documentation
 
-Thobic's backend provides interactive API documentation through FastAPI.
-
-- **Production API Documentation:** [Open Swagger UI](https://thobic-backend.onrender.com/docs)
+- **Production Swagger UI:** [Open Swagger UI](https://thobic-backend.onrender.com/docs)
 - **Production ReDoc:** [Open ReDoc](https://thobic-backend.onrender.com/redoc)
+- **Local Swagger UI:** `http://127.0.0.1:8000/docs`
 
-Swagger UI allows developers to inspect available endpoints, review request and response schemas, and test supported API operations.
+Swagger UI shows the routes and schemas registered in the running application. Use it as the source of truth if a route below differs from the deployed implementation.
+
+---
+
+## API Route Reference
+
+This high-level reference is based on the endpoints documented in the frontend integration. Verify exact methods, access rules, and schemas in [Swagger UI](https://thobic-backend.onrender.com/docs).
+
+### Authentication
+
+| Method | Endpoint            | Purpose                                  |
+| ------ | ------------------- | ---------------------------------------- |
+| `POST` | `/api/register`     | Register a client account.               |
+| `POST` | `/api/login`        | Authenticate a user.                     |
+| `GET`  | `/api/current_user` | Retrieve the current user's information. |
+
+### Admin
+
+| Method | Endpoint           | Purpose                              |
+| ------ | ------------------ | ------------------------------------ |
+| `POST` | `/api/admin/users` | Create a tailor or provider account. |
+
+### Profiles
+
+| Method | Endpoint           | Purpose                              |
+| ------ | ------------------ | ------------------------------------ |
+| `POST` | `/api/profiles`    | Create a profile.                    |
+| `GET`  | `/api/profiles/me` | Retrieve the current user's profile. |
+| `PUT`  | `/api/profiles/me` | Update the current user's profile.   |
+
+### Client Measurements
+
+| Method   | Endpoint               | Purpose                      |
+| -------- | ---------------------- | ---------------------------- |
+| `POST`   | `/api/measurements`    | Save measurements.           |
+| `GET`    | `/api/measurements/me` | Retrieve saved measurements. |
+| `PUT`    | `/api/measurements/me` | Update saved measurements.   |
+| `DELETE` | `/api/measurements/me` | Delete saved measurements.   |
+
+### Materials
+
+| Method   | Endpoint                       | Purpose                                |
+| -------- | ------------------------------ | -------------------------------------- |
+| `POST`   | `/api/materials/upload-image`  | Upload a material image.               |
+| `POST`   | `/api/materials`               | Add a material.                        |
+| `GET`    | `/api/materials`               | Browse and filter materials.           |
+| `GET`    | `/api/materials/mine`          | Retrieve the current user's materials. |
+| `GET`    | `/api/materials/{material_id}` | Retrieve material details.             |
+| `PUT`    | `/api/materials/{material_id}` | Update a material.                     |
+| `DELETE` | `/api/materials/{material_id}` | Soft-delete a material.                |
+
+Documented filters include `source_id`, `source_role`, `texture`, `pattern`, `season`, `stand`, `colour`, `min_price`, and `max_price`.
+
+### Thawb Orders
+
+| Method   | Endpoint                                | Purpose                          |
+| -------- | --------------------------------------- | -------------------------------- |
+| `POST`   | `/api/orders`                           | Create a Thawb order.            |
+| `GET`    | `/api/orders/my-orders`                 | Retrieve relevant orders.        |
+| `GET`    | `/api/orders/{order_id}`                | Retrieve order details.          |
+| `PUT`    | `/api/orders/{order_id}`                | Edit an order where permitted.   |
+| `DELETE` | `/api/orders/{order_id}`                | Delete an order where permitted. |
+| `PATCH`  | `/api/orders/{order_id}/tailor-accept`  | Propose price and deadline.      |
+| `PATCH`  | `/api/orders/{order_id}/tailor-reject`  | Reject an order.                 |
+| `PATCH`  | `/api/orders/{order_id}/client-respond` | Respond to a proposal.           |
+| `PATCH`  | `/api/orders/{order_id}/in-progress`    | Start tailoring.                 |
+| `PATCH`  | `/api/orders/{order_id}/ready`          | Mark an order ready.             |
+| `PATCH`  | `/api/orders/{order_id}/on-the-way`     | Mark an order as on the way.     |
+| `PATCH`  | `/api/orders/{order_id}/delivered`      | Confirm delivery.                |
+
+### Material Orders
+
+| Method | Endpoint                                              | Purpose                                                |
+| ------ | ----------------------------------------------------- | ------------------------------------------------------ |
+| `GET`  | `/api/material-orders`                                | Retrieve material orders.                              |
+| `GET`  | `/api/material-orders/{material_order_id}`            | Retrieve order details.                                |
+| `PUT`  | `/api/material-orders/{material_order_id}/accept`     | Accept an order and provide an expected delivery date. |
+| `PUT`  | `/api/material-orders/{material_order_id}/reject`     | Reject a material order.                               |
+| `PUT`  | `/api/material-orders/{material_order_id}/on-the-way` | Mark materials as shipped.                             |
+| `PUT`  | `/api/material-orders/{material_order_id}/delivered`  | Confirm material delivery.                             |
+
+### Shops
+
+| Method | Endpoint               | Purpose                                        |
+| ------ | ---------------------- | ---------------------------------------------- |
+| `GET`  | `/api/shops`           | Browse and filter tailoring shops.             |
+| `GET`  | `/api/shops/{shop_id}` | Retrieve shop profile and available materials. |
 
 ---
 
 ## User Roles
 
-Thobic is designed around four primary user roles.
+| Role         | Main Responsibilities                                                                 |
+| ------------ | ------------------------------------------------------------------------------------- |
+| **Client**   | Browse shops and materials, manage measurements, create orders, and confirm delivery. |
+| **Tailor**   | Manage shop profile, inventory, orders, prices, deadlines, and statuses.              |
+| **Provider** | Manage material inventory and material orders.                                        |
+| **Admin**    | Create tailor and provider accounts.                                                  |
 
-| Role         | Description                                                                       |
-| ------------ | --------------------------------------------------------------------------------- |
-| **Client**   | Creates Thawb orders, selects materials, manages measurements, and tracks orders. |
-| **Tailor**   | Manages tailoring orders, inventory, pricing, deadlines, and order statuses.      |
-| **Provider** | Manages material inventory and handles material orders from tailors.              |
-| **Admin**    | Creates and manages tailor and provider accounts.                                 |
-
-Access to specific operations depends on the permissions and functionality implemented in the backend.
+Access to specific operations depends on permissions implemented in the backend.
 
 ---
 
 ## Future Development
 
-Potential future enhancements include:
-
-- Online payment integration.
-- Notifications for order and delivery updates.
-- Real-time order tracking.
-- Advanced material search and filtering.
-- Customer reviews and ratings.
-- Delivery management.
-- Analytics and reporting dashboards.
-- Appointment booking and management.
-- Mobile application support.
-
-These items represent potential enhancements and should not be considered implemented features unless they are available in the current application.
+Potential enhancements include online payments, notifications, real-time order tracking, advanced material search, customer reviews, delivery management, analytics, appointment booking, and mobile application support. These are potential enhancements and should not be considered implemented unless available in the application.
 
 ---
 
@@ -370,13 +372,12 @@ These items represent potential enhancements and should not be considered implem
 
 Thobic is a software engineering project focused on simplifying the traditional Thawb ordering and tailoring process through a centralized digital platform.
 
-The project brings together frontend development, backend engineering, database design, and deployment to support a more convenient digital experience for clients, tailors, and material providers.
-
 ---
 
-**Project Links**
+## Project Links
 
 - [Live Website](https://thobic.vercel.app)
 - [Frontend Repository](https://github.com/AhKhamis/Thobic-Frontend)
 - [Backend Repository](https://github.com/AhKhamis/Thobic-Backend)
-- [API Documentation](https://thobic-backend.onrender.com/docs)
+- [Swagger UI](https://thobic-backend.onrender.com/docs)
+- [ReDoc](https://thobic-backend.onrender.com/redoc)
